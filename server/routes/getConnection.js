@@ -5,11 +5,11 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   host: 'localhost',
   user: 'root',
-  password: '123',
+  password: 'Holacode',
   database: 'TaskBoard'
 })
 
-getConnection = () =>  {
+getConnection = () => {
   return pool
 }
 
