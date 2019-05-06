@@ -90,7 +90,7 @@ export default class Register extends Component {
           <h2>
             Welcome to <mark className="KaizenW">Kaizen 2.0</mark>
             <br />
-            <h6>Please Register!!</h6>
+            <h4>Please Register!!</h4>
           </h2>
           <br />
           <form>

@@ -11,8 +11,8 @@ export default class login extends Component {
       password: "",
       list: false
     };
-    this.getData = this.getData.bind(this);
-    this.loginUser = this.loginUser.bind(this);
+    //this.getData = this.getData.bind(this);
+    //this.loginUser = this.loginUser.bind(this);
     this.resgisterPassword = this.loginPassword.bind(this);
     this.handleUser = this.handleUser.bind(this);
     this.onClicker = this.onClicker.bind(this);
@@ -33,7 +33,7 @@ export default class login extends Component {
       password: password
     });
   }
-
+  /*
   getData() {
     $.ajax({
       url: "/users",
@@ -47,6 +47,7 @@ export default class login extends Component {
       }
     });
   }
+  
   loginUser(name, password) {
     console.log(`New task added: ${(name, password)}`);
     $.ajax({
@@ -65,16 +66,9 @@ export default class login extends Component {
       });
     });
   }
-  /*
-  componentDidMount() {
-    console.log("Initial load of DB");
-    this.getData();
-    this.loginUser();
-  }
   */
 
   render() {
-    console.log(this.state.name, this.state.password);
     return (
       <div className="LoginMessage">
         <center>
@@ -86,45 +80,24 @@ export default class login extends Component {
             <h4>Please login!!</h4>
           </h2>
           <br />
-          <form>
-            <input
-              placeholder="Enter User Name"
-              type="text"
-              onChange={e => this.handleUser(e.target.value)}
-              // set value to the userInput from state
-              value={this.state.name}
-              type="text"
-              onKeyDown={e => {
-                if (e.key === "Enter") {
-                  console.log("user in submitted", this.state.name);
-                  this.loginUser(this.state.name);
-                }
-              }}
-            />
-            <input
-              placeholder="Password"
-              type="text"
-              onChange={e => this.loginPassword(e.target.value)}
-              // set value to the userInput from state
-              value={this.state.password}
-              type="text"
-              onKeyDown={e => {
-                if (e.key === "Enter") {
-                  console.log(
-                    "password submitted",
-                    this.state.user,
-                    this.state.password
-                  );
-                  this.loginUser(this.state.name, this.state.password);
-                }
-              }}
-            />
-            <button
-              onClick={this.loginUser(this.state.name, this.state.password)}
-            >
-              Login
-            </button>
-          </form>
+
+          <input
+            placeholder="Enter User Name"
+            type="text"
+            onChange={e => this.handleUser(e.target.value)}
+            // set value to the userInput from state
+            value={this.state.name}
+            type="text"
+          />
+          <input
+            placeholder="Password"
+            type="password"
+            onChange={e => this.loginPassword(e.target.value)}
+            // set value to the userInput from state
+            value={this.state.password}
+          />
+          <button onClick={this.onClicker}>Login</button>
+
           <Link className="LinksPW" to="/main/">
             <button disabled={!this.state.list} type="button">
               Access
